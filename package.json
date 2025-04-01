@@ -1,0 +1,26 @@
+{
+  "name": "curso_cypress_e2e_api_ui",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:headless": "cypress run --headless",
+    "cypress:run:record": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b",
+    "cypress:run:record:headless": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless",
+    "cypress:run:record:headless:parallel": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless --parallel",
+    "cypress:run:record:headless:parallel:ci": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless --parallel --ci-build-id $CIRCLE_BUILD_NUM",
+    "cypress:run:record:headless:parallel:ci:tag": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless --parallel --ci-build-id $CIRCLE_BUILD_NUM --tag $CIRCLE_TAG",
+    "cypress:run:record:headless:parallel:ci:tag:build": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless --parallel --ci-build-id $CIRCLE_BUILD_NUM --tag $CIRCLE_TAG --build $CIRCLE_BUILD_URL",
+    "cypress:run:record:headless:parallel:ci:tag:build:branch": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless --parallel --ci-build-id $CIRCLE_BUILD_NUM --tag $CIRCLE_TAG --build $CIRCLE_BUILD_URL --branch $CIRCLE_BRANCH",
+    "cypress:run:record:headless:parallel:ci:tag:build:branch:commit": "cypress run --record --key 2f3a0b4d-1e5b-4f7e-8a6d-9f2b0c3e5a1b --headless --parallel --ci-build-id $CIRCLE_BUILD_NUM --tag $CIRCLE_TAG --build $CIRCLE_BUILD_URL --branch $CIRCLE_BRANCH --commit $CIRCLE_SHA1"
+  },
+  "keywords": [],
+  "author": "Juliano José Vilar",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cypress": "^14.2.1"
+  }
+}
