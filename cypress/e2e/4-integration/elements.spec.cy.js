@@ -36,7 +36,7 @@ describe('Work with basic elements', () => {
             .type('textarea')
             .should('have.value', 'textarea')
 
-        cy.get('#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input')
+        cy.get('#tabelaUsuarios input[type="text"]')
             .type('???')
 
         cy.get('[data-cy=dataSobrenome]')
@@ -45,7 +45,7 @@ describe('Work with basic elements', () => {
 
         cy.get('#elementosForm\\:sugestoes')
             .clear()
-            .type('Erro{selectall}acerto', { delay: 100 })
+            .type('Erro{selectAll}acerto', { delay: 100 })
             .should('have.value', 'acerto')
     })
 
@@ -59,7 +59,7 @@ describe('Work with basic elements', () => {
         cy.get("[name=formSexo]").should('have.length', 2)
     })
 
-    it.only('Checkbox', () => {
+    it('Checkbox', () => {
         cy.get('#formComidaPizza')
             .click()
             .should('be.checked')
@@ -69,7 +69,7 @@ describe('Work with basic elements', () => {
         cy.get('#formComidaVegetariana').should('be.checked')
     })
 
-    it.only('Combo', () => {
+    it('Combo', () => {
         cy.get('[data-test=dataEscolaridade]')
             .select('2o grau completo')
             .should('have.value', '2graucomp')
@@ -89,10 +89,10 @@ describe('Work with basic elements', () => {
         })
     })
 
-    it.only('Combo multiplo', () => {
+    it('Combo multiplo', () => {
         cy.get('[data-testid=dataEsportes]')
             .select(['natacao', 'Corrida', 'nada'])
-        // cy.get('[data-testid=dataEsportes]').should('have.value', ['natacao', 'Corrida', 'nada'])
+        // cy.get('[data-testid=dataEsportes]').should('have.value', ['natacao', 'Corrida', 'nada']) // This assertion is commented out as it is not valid for multiple selections.
         cy.get('[data-testid=dataEsportes]').then($el => {
             expect($el.val()).to.be.deep.equal(['natacao', 'Corrida', 'nada'])
             expect($el.val()).to.have.length(3)
