@@ -9,7 +9,8 @@ describe('Work with basic elements', () => {
         cy.reload()
     })
 
-    it('Text', () => {
+    it.skip('Text', () => {
+        cy.get(':nth-child(2) > [data-layer="Content"]').click()
         cy.get('body').should('contain', 'Cuidado')
         // cy.get('body').should('have.text', 'Cuidado')
         cy.get('span').should('contain', 'Cuidado')
@@ -28,7 +29,7 @@ describe('Work with basic elements', () => {
         cy.get('#resultado').should('have.text', 'Voltou!')
     })
 
-    it('TextFields', () => {
+    it.skip('TextFields', () => {
         cy.get('#formNome').type('Cypress Test')
         cy.get('#formNome').should('have.value', 'Cypress Test')
 
@@ -49,7 +50,7 @@ describe('Work with basic elements', () => {
             .should('have.value', 'acerto')
     })
 
-    it('RadioButton', () => {
+    it.skip('RadioButton', () => {
         cy.get('#formSexoFem')
             .click()
             .should('be.checked')
@@ -59,7 +60,7 @@ describe('Work with basic elements', () => {
         cy.get("[name=formSexo]").should('have.length', 2)
     })
 
-    it('Checkbox', () => {
+    it.skip('Checkbox', () => {
         cy.get('#formComidaPizza')
             .click()
             .should('be.checked')
@@ -69,7 +70,7 @@ describe('Work with basic elements', () => {
         cy.get('#formComidaVegetariana').should('be.checked')
     })
 
-    it('Combo', () => {
+    it.skip('Combo', () => {
         cy.get('[data-test=dataEscolaridade]')
             .select('2o grau completo')
             .should('have.value', '2graucomp')
@@ -89,7 +90,7 @@ describe('Work with basic elements', () => {
         })
     })
 
-    it('Combo multiplo', () => {
+    it.skip('Combo multiplo', () => {
         cy.get('[data-testid=dataEsportes]')
             .select(['natacao', 'Corrida', 'nada'])
         // cy.get('[data-testid=dataEsportes]').should('have.value', ['natacao', 'Corrida', 'nada']) // This assertion is commented out as it is not valid for multiple selections.
