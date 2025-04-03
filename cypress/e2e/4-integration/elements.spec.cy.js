@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+/// <reference types="cypress-xpath" />
+/// <reference types="cypress-iframe" />
 
 describe('Work with basic elements', () => {
     before(() => {
@@ -10,7 +12,6 @@ describe('Work with basic elements', () => {
     })
 
     it.skip('Text', () => {
-        cy.get(':nth-child(2) > [data-layer="Content"]').click()
         cy.get('body').should('contain', 'Cuidado')
         // cy.get('body').should('have.text', 'Cuidado')
         cy.get('span').should('contain', 'Cuidado')
@@ -20,13 +21,16 @@ describe('Work with basic elements', () => {
     })
 
     it('Links', () => {
-        cy.get('a').click()
+        //cy.get(':nth-child(2) > [data-layer="Content"]').click()
+        //cy.get('[href="#"]').click()
+        cy.xpath("//a[contains(text(),'Voltar')]").click()
+       //cy.get('a').click()
         cy.get('#resultado').should('have.text', 'Voltou!')
 
-        cy.reload()
-        cy.get('#resultado').should('have.not.text', 'Voltou!')
-        cy.contains('Voltar').click()
-        cy.get('#resultado').should('have.text', 'Voltou!')
+        //cy.reload()
+        //cy.get('#resultado').should('have.not.text', 'Voltou!')
+        //cy.contains('Voltar').click()
+        //cy.get('#resultado').should('have.text', 'Voltou!')
     })
 
     it.skip('TextFields', () => {

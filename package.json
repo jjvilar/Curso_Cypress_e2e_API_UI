@@ -22,5 +22,9 @@
   "description": "",
   "dependencies": {
     "cypress": "^14.2.1"
+  },
+  "devDependencies": {
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1"
   }
 }
