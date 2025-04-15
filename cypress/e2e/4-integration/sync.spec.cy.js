@@ -10,7 +10,7 @@ describe('Esperas...', () => {
         cy.reload()
     })
 
-    it('Deve aguardar elemento estar disponivel', () => {
+    it.skip('Deve aguardar elemento estar disponivel', () => {
         cy.get('#novoCampo').should('not.exist')
         cy.get('#buttonDelay').click()
         cy.get('#novoCampo').should('not.exist')
@@ -18,7 +18,7 @@ describe('Esperas...', () => {
         cy.get('#novoCampo').type('funciona')
     })
 
-    it.only('Deve fazer retrys', () => {
+    it.skip('Deve fazer retrys', () => {
         cy.get('#novoCampo').should('not.exist')
         cy.get('#buttonDelay').click()
         cy.get('#novoCampo').should('not.exist')
@@ -29,7 +29,7 @@ describe('Esperas...', () => {
 
     })
 
-    it.only('Uso do find', () => {
+    it.skip('Uso do find', () => {
         cy.get('#buttonListDOM').click()
         cy.get('#lista li')
             .find('span')
@@ -42,7 +42,7 @@ describe('Esperas...', () => {
 
     })
 
-    it.only('Uso do timeout', () => {
+    it.skip('Uso do timeout', () => {
         // cy.get('#buttonDelay').click()
         // cy.get('#novoCampo', { timeout: 1000 }).should('exist')
 
@@ -58,17 +58,17 @@ describe('Esperas...', () => {
             .should('have.length', 2)
     })
 
-    it.only('Click retry', () => {
+    it.skip('Click retry', () => {
         cy.get('#buttonCount')
             .click()
             .click()
             .should('have.value', '111')
     })
 
-    it.only('Should vs Then', () => {
+    it('Should vs Then', () => {
         cy.get('#buttonListDOM').then($el => {
             // .should('have.length', 1)
-            // console.log($el)
+            console.log($el)
             expect($el).to.have.length(1)
             cy.get('#buttonList')
         })

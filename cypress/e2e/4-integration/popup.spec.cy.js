@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Work with Popup', () => {
-    it('Deve testar popup diretamente', () => {
+    it.skip('Deve testar popup diretamente', () => {
         cy.visit('https://wcaquino.me/cypress/frame.html')
         cy.get('#otherButton').click()
         cy.on('window:alert', msg => {
@@ -9,7 +9,7 @@ describe('Work with Popup', () => {
         })
     })
 
-    it.only('Deve verificar se o popup foi invocado', () => {
+    it.skip('Deve verificar se o popup foi invocado', () => {
         cy.visit('https://wcaquino.me/cypress/componentes.html')
         cy.window().then(win => {
             cy.stub(win, 'open').as('winOpen')
@@ -18,7 +18,7 @@ describe('Work with Popup', () => {
         cy.get('@winOpen').should('be.called')
     })
 
-    describe.only('With links...', () => {
+    describe('With links...', () => {
         beforeEach(() => {
             cy.visit('https://wcaquino.me/cypress/componentes.html')
         })

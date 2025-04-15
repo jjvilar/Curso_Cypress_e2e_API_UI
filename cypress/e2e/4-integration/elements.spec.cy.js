@@ -20,7 +20,7 @@ describe('Work with basic elements', () => {
         cy.get('.facilAchar').should('have.text', 'Cuidado onde clica, muitas armadilhas...')
     })
 
-    it('Links', () => {
+    it.skip('Links', () => {
         //cy.get(':nth-child(2) > [data-layer="Content"]').click()
         //cy.get('[href="#"]').click()
         cy.xpath("//a[contains(text(),'Voltar')]").click()
@@ -30,7 +30,7 @@ describe('Work with basic elements', () => {
         //cy.reload()
         //cy.get('#resultado').should('have.not.text', 'Voltou!')
         //cy.contains('Voltar').click()
-        //cy.get('#resultado').should('have.text', 'Voltou!')
+        // cy.get('#resultado').should('have.text', 'Voltou!')
     })
 
     it.skip('TextFields', () => {
@@ -41,8 +41,10 @@ describe('Work with basic elements', () => {
             .type('textarea')
             .should('have.value', 'textarea')
 
-        cy.get('#tabelaUsuarios input[type="text"]')
-            .type('???')
+        cy.get('#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input').type('Cypress Test')
+        cy.get('#tabelaUsuarios > :nth-child(2) > :nth-child(1) > :nth-child(6) > input').should('have.value', 'Cypress Test')
+        /* cy.get('#tabelaUsuarios input[type="text"]')
+            .type('???') */
 
         cy.get('[data-cy=dataSobrenome]')
             .type('Teste12345{backspace}{backspace}')
@@ -94,7 +96,7 @@ describe('Work with basic elements', () => {
         })
     })
 
-    it.skip('Combo multiplo', () => {
+    it('Combo multiplo', () => {
         cy.get('[data-testid=dataEsportes]')
             .select(['natacao', 'Corrida', 'nada'])
         // cy.get('[data-testid=dataEsportes]').should('have.value', ['natacao', 'Corrida', 'nada']) // This assertion is commented out as it is not valid for multiple selections.

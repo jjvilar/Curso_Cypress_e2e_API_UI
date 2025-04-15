@@ -9,17 +9,18 @@ describe('Work with alerts', () => {
         cy.reload()
     })
 
-    it.only('Alert', () => {
-        // cy.get('#alert').click()
-        // cy.on('window:alert', msg => {
-        //     expect(msg).to.be.equal('Alert Simples')
-        // })
+    it.skip('Alert', () => {
+        cy.get('#alert').click()
+        cy.on('window:alert', msg => {
+            expect(msg).to.be.equal('Alert Simples')
+        })
         cy.clickAlert('#alert', 'Alert Simples')
     })
 
-    it('Alert com mock', () => {
+    it.skip('Alert com mock', () => {
         const stub = cy.stub().as('alerta')
         cy.on('window:alert', stub)
+        
         cy.get('#alert').click().then(() => {
             expect(stub.getCall(0)).to.be.calledWith('Alert Simples')
         })
@@ -59,7 +60,7 @@ describe('Work with alerts', () => {
         cy.get('#prompt').click()
     })
 
-    it('Validando mensagens', () => {
+    it.only('Validando mensagens', () => {
         const stub = cy.stub().as('alerta')
         cy.on('window:alert', stub)
         cy.get('#formCadastrar').click()
